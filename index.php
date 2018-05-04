@@ -25,7 +25,7 @@ function ip_is_public ($ip) {
 };
 
 if (isset ($_SERVER["HTTP_X_FORWARDED_FOR"])){
-    if (ip_is_private($_SERVER["HTTP_X_FORWARDED_FOR"])){
+    if (ip_is_public($_SERVER["HTTP_X_FORWARDED_FOR"])){
         $IP = $_SERVER["HTTP_X_FORWARDED_FOR"];
     } else {
         $IP = $_SERVER["REMOTE_ADDR"];
